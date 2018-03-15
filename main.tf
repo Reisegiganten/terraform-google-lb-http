@@ -84,6 +84,7 @@ resource "google_compute_http_health_check" "default" {
   project      = "${var.project}"
   count        = "${length(var.backend_params)}"
   name         = "${var.name}-backend-${count.index}"
+  check_interval_sec = 15
   request_path = "${element(split(",", element(var.backend_params, count.index)), 0)}"
   port         = "${element(split(",", element(var.backend_params, count.index)), 2)}"
 }
