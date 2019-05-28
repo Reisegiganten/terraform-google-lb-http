@@ -41,7 +41,7 @@ variable target_tags {
 
 variable backends {
   description = "Map backend indices to list of backend maps."
-  type        = "list"
+  type        = "map"
 }
 
 variable backend_params {
